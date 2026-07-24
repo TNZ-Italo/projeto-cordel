@@ -1,2 +1,70 @@
 @charset "UTF-8";
 
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html body {
+    background-color: darkgray;
+    min-height: 100vh;
+    
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    padding: 45px;
+    font-variant: small-caps;
+}
+
+header > p {
+    padding-bottom: 45px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;
+}
+
+
+section.normal {
+    background-color: white;
+    color: black;
+}
+
+section.imagem {
+    background-color: black;
+    color: rgb(154, 0, 0);
+}
+
+section.imagem > pre {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.64);
+}
+
+
+
+footer {
+    text-align: center;
+    background-color: black;
+    padding-top: 3px;
+    padding bottom:3px ;
+    color: white;
+
+}
