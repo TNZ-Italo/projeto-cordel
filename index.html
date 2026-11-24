@@ -11,15 +11,15 @@
 
 <!-- 1 - ENVELOPE -->
 <div class="tela ativa" id="t1">
-  <p class="pequeno">Você tem uma mensagem especial...</p>
+  <p class="pequeno">Você tem uma mensagem especial do leonardo italo...</p>
   <h1>Clique no envelope<br><span>pra abrir 💌</span></h1>
   <div class="envelope" onclick="proximo(2)">✉️</div>
-  <p>feito com muito amor</p>
+  <p>feito com muito amor...</p>
 </div>
 
 <!-- 2 - BOAS VINDAS -->
 <div class="tela" id="t2">
-  <h1>Feliz Aniversário Vitória! 🎂<br><span>Hoje é todo seu!</span></h1>
+  <h1>Feliz Aniversário Vitória! 🎂<br><span>Hoje é seu dia!</span></h1>
   <p>Preparei uma surpresa com 5 fases pra você. Cada fase tem um pedacinho do meu coração.</p>
   <div class="barra"><div class="progresso" id="barra"></div></div>
   <p id="textoBarra">Fase 1 de 5</p>
@@ -31,9 +31,9 @@
   <h1>Nossos momentos 📸</h1>
   <p>Clica em cada foto pra lembrar desse dia</p>
   <div class="polaroids">
-    <div class="polaroid" onclick="alert('Esse dia foi perfeito! 🥰')"><img src="foto1.jpg"><b>Melhor dia ❤️</b></div>
-    <div class="polaroid" onclick="alert('Olha essa carinha! 😍')"><img src="foto2.jpg"><b>Você linda(o) ✨</b></div>
-    <div class="polaroid" onclick="alert('Quero viver isso de novo! 💖')"><img src="foto3.jpg"><b>Pra sempre nós 💌</b></div>
+    <div class="polaroid" onclick="alert('Esse dia foi perfeito! 🥰')"><img src="imagens/shopping.jpg.jpeg"><b>Melhor dia ❤️</b></div>
+    <div class="polaroid" onclick="alert('Olha essa carinha! 😍')"><img src="imagens/sorveteria.jpeg"><b>Você linda(o) ✨</b></div>
+    <div class="polaroid" onclick="alert('Quero viver isso de novo! 💖')"><img src="imagens/pizzaria.jpeg"><b>Pra sempre nós 💌</b></div>
   </div>
   <button class="btn" onclick="proximo(4)">Próxima fase ➡️</button>
 </div>
@@ -53,8 +53,8 @@
   <p>Vamos ver se você me conhece mesmo...</p>
   <div class="cartao">
     <h3>Qual é a minha comida favorita?</h3>
-    <button class="opcao" onclick="responder(this,false)">🍕 Pizza</button>
-    <button class="opcao" onclick="responder(this,true)">🍔 Hambúrguer - TROCA AQUI PELA CERTA</button>
+    <button class="opcao" onclick="responder(this,true)">🍕 Pizza</button>
+    <button class="opcao" onclick="responder(this,false)">🍔 Hambúrguer</button>
     <button class="opcao" onclick="responder(this,false)">🍣 Sushi</button>
     <p id="feedbackQuiz"></p>
   </div>
