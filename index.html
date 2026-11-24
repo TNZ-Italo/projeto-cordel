@@ -1,119 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>projeto cordel</title>
-
+<html lang="pt-BR">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Aniversário ❤️</title>
 <link rel="stylesheet" href="meuestilo.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Black+Ops+One&family=Bungee&family=Fontdiner+Swanky&family=Grenze:ital,wght@0,100..900;1,100..900&family=Jersey+10+Charted&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+ID:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
+<script src="js/script.js"></script>
 
 </head>
-<body> 
+<body>
 
-<header>
+<!-- 1 - ENVELOPE -->
+<div class="tela ativa" id="t1">
+  <p class="pequeno">Você tem uma mensagem especial...</p>
+  <h1>Clique no envelope<br><span>pra abrir 💌</span></h1>
+  <div class="envelope" onclick="proximo(2)">✉️</div>
+  <p>feito com muito amor</p>
+</div>
 
-    <h1>
-        Cordel Moderno
-    </h1>
+<!-- 2 - BOAS VINDAS -->
+<div class="tela" id="t2">
+  <h1>Feliz Aniversário Vitória! 🎂<br><span>Hoje é todo seu!</span></h1>
+  <p>Preparei uma surpresa com 5 fases pra você. Cada fase tem um pedacinho do meu coração.</p>
+  <div class="barra"><div class="progresso" id="barra"></div></div>
+  <p id="textoBarra">Fase 1 de 5</p>
+  <button class="btn" onclick="proximo(3)">Começar a aventura ✨</button>
+</div>
+
+<!-- 3 - FOTOS -->
+<div class="tela" id="t3">
+  <h1>Nossos momentos 📸</h1>
+  <p>Clica em cada foto pra lembrar desse dia</p>
+  <div class="polaroids">
+    <div class="polaroid" onclick="alert('Esse dia foi perfeito! 🥰')"><img src="foto1.jpg"><b>Melhor dia ❤️</b></div>
+    <div class="polaroid" onclick="alert('Olha essa carinha! 😍')"><img src="foto2.jpg"><b>Você linda(o) ✨</b></div>
+    <div class="polaroid" onclick="alert('Quero viver isso de novo! 💖')"><img src="foto3.jpg"><b>Pra sempre nós 💌</b></div>
+  </div>
+  <button class="btn" onclick="proximo(4)">Próxima fase ➡️</button>
+</div>
+
+<!-- 4 - BOLO -->
+<div class="tela" id="t4">
+  <h1>Faça um pedido! 🕯️</h1>
+  <p>Pensa bem forte no seu desejo... e clica no bolo pra apagar a vela!</p>
+  <div class="bolo" id="bolo" onclick="apagar()">🎂🕯️🕯️🕯️</div>
+  <p id="msgBolo"></p>
+  <button class="btn" id="btnBolo" style="display:none" onclick="proximo(5)">Continuar ➡️</button>
+</div>
+
+<!-- 5 - QUIZ -->
+<div class="tela" id="t5">
+  <h1>Quiz do amor 💘</h1>
+  <p>Vamos ver se você me conhece mesmo...</p>
+  <div class="cartao">
+    <h3>Qual é a minha comida favorita?</h3>
+    <button class="opcao" onclick="responder(this,false)">🍕 Pizza</button>
+    <button class="opcao" onclick="responder(this,true)">🍔 Hambúrguer - TROCA AQUI PELA CERTA</button>
+    <button class="opcao" onclick="responder(this,false)">🍣 Sushi</button>
+    <p id="feedbackQuiz"></p>
+  </div>
+</div>
+
+<!-- 6 - MOTIVOS -->
+<div class="tela" id="t6">
+  <h1>3 motivos pra te amar ❤️</h1>
+  <p>Clica em cada coração pra revelar</p>
+  <div class="motivos">
+    <div class="motivo" onclick="revelar(this,'Seu sorriso')"><span>❤️</span><p>Clica pra revelar</p></div>
+    <div class="motivo" onclick="revelar(this,'Seu jeito')"><span>💖</span><p>Clica pra revelar</p></div>
+    <div class="motivo" onclick="revelar(this,'Você ser você')"><span>💘</span><p>Clica pra revelar</p></div>
+  </div>
+  <button class="btn" onclick="proximo(7)">Ver carta final 💌</button>
+</div>
+
+<!-- 7 - FINAL -->
+<div class="tela" id="t7">
+  <h1>Pra você, com amor 💌</h1>
+  <div class="cartao" style="text-align:center">
+    <p style="text-align:left">Hoje é seu aniversário, mas quem ganhou o presente fui eu por ter você na minha vida.</p>
+    <p style="text-align:left;margin-top:10px"><b>Que seu novo ano venha com muita saúde, amor, dinheiro, paz e muitos sonhos realizados. Eu vou estar aqui em todos eles!</b></p>
+    <p style="text-align:left;margin-top:10px">Feliz aniversário, meu amor! Te amo muito! 🥰🎂</p>
+    <input type="text" id="resposta" placeholder="O que você achou da surpresa?">
+    <button class="btn" onclick="finalizar()" style="width:100%">Enviar resposta 💌</button>
+    <p id="finalMsg"></p>
+  </div>
+  <button class="btn" style="background:#6a00ff" onclick="fogos()">Soltar fogos de novo 🎆</button>
+</div>
 
 
-    <p>
-        por <a href="https://www.recantodasletras.com.br/poesias/3186743" target="_blank">Milton Duarte</a>
-    </p>
-
-</header>
-
-    <section class="normal">
-        <pre>
-            Estou ficando cansado
-            Da tal tecnologia
-            Só se fala por e-mail
-            Mensagem curta e fria
-            Twitter e Facebook
-            Antes que eu caduque
-            Vou dizer tudo em poesia.
-        </pre>
-    </section>
-
-    
-
-    <section class="imagem" id="img01">
-        <pre>
-            Não é mais como era antes
-            É tudo abreviado
-            "Você" só tem duas letras
-            O "O" e o "E" foi riscado
-            Para declarar o amor
-            Basta botar uma flor
-            E um coração desenhado.
-        </pre>
-    </section>
-
-    
-
-    <section class="normal">
-        <pre>
-            Arroba agora não pesa
-            É parte de um endereço
-            Ponto final nem se usa
-            Ou vai até no começo
-            Agora é .com
-            Se o saite é muito bom
-            Ele vale um alto preço.
-            
-            Pra piorar a liguagem
-            O emoticom é um risco
-            Tem símbolo para tudo
-            Ponto e vírgula e um asterisco
-            Um beijo significa
-            Pra entender como fica
-            Decifre esse rabisco.
-        </pre>
-    </section>
-
-    
-
-    <section class="imagem" id="img02">
-        <pre>
-            Tenho saudade das cartas
-            Escritas com a própria mão
-            Mandava no mês de Junho
-            Só chegava no Verão
-            Mas matava a saudade
-            Era texto de verdade
-            Nas linhas do coração.
-        </pre>
-    </section>
-
-    
-
-    <section class="normal">
-        <pre>
-            Agora, escrevo e envio
-            Chegando na mesma hora
-            Mas quando vou prosear
-            A pessoa foi embora
-            Abriu outro aplicativo
-            O mundo ficou cativo
-            Da tecnologia do agora.
-            
-            Felizmente, pra orar
-            Não precisa de internet
-            Deus escuta todo mundo
-            Se quiser, faça esse teste
-            Dois pontos são dois joelhos
-            Seus lábios são aparelhos
-            Deixe que Deus interprete.
-        </pre>
-    </section>
-
-    <footer>
-        <p>site criado por <a href="https://github.com/TNZ-Italo" target="_blank">leonardo italo</a></p>
-    </footer>
 </body>
 </html>
